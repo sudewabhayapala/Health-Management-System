@@ -1,0 +1,11 @@
+﻿PrescriptionId,PatientId,ClinicianId,PrescriptionDate,Condition,DrugName,Dosage,Duration,Instructions
+PRC001,P001,C001,2026-01-05,Hypertension,Amlodipine,5mg,30 days,Take one tablet daily in the morning
+PRC002,P002,C001,2026-01-06,High Cholesterol,Atorvastatin,20mg,30 days,Take one tablet at bedtime
+PRC003,P003,C002,2026-01-07,Type 2 Diabetes,Metformin,500mg,30 days,Take one tablet twice daily with meals
+PRC004,P005,C001,2026-01-08,Asthma,Salbutamol Inhaler,100mcg,As needed,Use 1-2 puffs when needed
+PRC005,P006,C003,2026-01-09,Back Pain,Ibuprofen,400mg,7 days,Take one tablet three times daily after food
+PRC006,P007,C003,2026-01-10,Bacterial Infection,Amoxicillin,500mg,7 days,Take one capsule three times daily
+PRC007,P008,C002,2026-01-11,Anxiety,Sertraline,50mg,30 days,Take one tablet daily in the morning
+PRC008,P002,C001,2025-12-20,Seasonal Flu,Paracetamol,500mg,5 days,Take 1-2 tablets every 4-6 hours as needed
+PRC009,P004,C002,2025-12-28,Vitamin D Deficiency,Vitamin D3,1000IU,90 days,Take one capsule daily
+PRC010,P009,C001,2026-01-03,Acid Reflux,Omeprazole,20mg,30 days,Take one capsule 30 minutes before breakfast

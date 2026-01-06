@@ -1,0 +1,6 @@
+﻿ReferralId,PatientId,GpId,SpecialistId,ReferralDate,Reason,Urgency,Status,Notes
+REF001,P001,C001,C004,2026-01-04,Suspected cardiac arrhythmia requiring specialist assessment,URGENT,PENDING,Patient experiencing palpitations and shortness of breath
+REF002,P003,C002,C005,2026-01-05,Chronic knee pain not responding to conservative treatment,ROUTINE,ACCEPTED,Patient has been managing with physiotherapy for 6 months
+REF003,P006,C003,C005,2026-01-06,Persistent lower back pain with suspected disc herniation,URGENT,PENDING,Patient unable to work due to severe pain
+REF004,P008,C002,C006,2026-01-07,Recurrent severe headaches with visual disturbances,URGENT,ACCEPTED,Patient requires neurological assessment
+REF005,P010,C003,C007,2026-01-08,Suspicious skin lesion requiring dermatological evaluation,ROUTINE,PENDING,Lesion has changed in appearance over past 3 months

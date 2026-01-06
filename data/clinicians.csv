@@ -1,0 +1,11 @@
+﻿ClinicianId,FirstName,LastName,Email,Phone,Specialty,LicenseNumber,ClinicianType
+C001,Robert,Anderson,dr.anderson@nhs.uk,07700800001,General Practice,GMC001234,GP
+C002,Patricia,Martinez,dr.martinez@nhs.uk,07700800002,General Practice,GMC002345,GP
+C003,Linda,Thompson,dr.thompson@nhs.uk,07700800003,General Practice,GMC003456,GP
+C004,Richard,Garcia,dr.garcia@nhs.uk,07700800004,Cardiology,GMC004567,SPECIALIST
+C005,Margaret,Rodriguez,dr.rodriguez@nhs.uk,07700800005,Orthopedics,GMC005678,SPECIALIST
+C006,Charles,Lee,dr.lee@nhs.uk,07700800006,Neurology,GMC006789,SPECIALIST
+C007,Barbara,Walker,dr.walker@nhs.uk,07700800007,Dermatology,GMC007890,SPECIALIST
+C008,Daniel,Hall,dr.hall@nhs.uk,07700800008,Endocrinology,GMC008901,SPECIALIST
+C009,Susan,Allen,nurse.allen@nhs.uk,07700800009,General Nursing,NMC001234,NURSE
+C010,Thomas,Young,nurse.young@nhs.uk,07700800010,Emergency Nursing,NMC002345,NURSE
