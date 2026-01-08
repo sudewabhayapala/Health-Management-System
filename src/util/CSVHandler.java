@@ -1,13 +1,12 @@
 package util;
 
-import model.*;
-
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import model.*;
 
 /**
  * Utility class for reading and writing CSV files
@@ -219,6 +218,32 @@ public class CSVHandler {
             System.err.println("Error reading referrals file: " + e.getMessage());
         }
         return referrals;
+    }
+
+    /**
+     * Writes patients to CSV file
+     */
+    public static void writePatients(String filename, List<Patient> patients) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename))) {
+            // Write header
+            bw.write("PatientId,FirstName,LastName,Email,Phone,DateOfBirth,Address,NhsNumber,GpId\n");
+            
+            // Write data
+            for (Patient patient : patients) {
+                bw.write(String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s\n",
+                    patient.getPatientId(),
+                    patient.getFirstName(),
+                    patient.getLastName(),
+                    patient.getEmail(),
+                    patient.getPhone(),
+                    patient.getDateOfBirth().format(DATE_FORMATTER),
+                    patient.getAddress(),
+                    patient.getNhsNumber(),
+                    patient.getGpId()));
+            }
+        } catch (IOException e) {
+            System.err.println("Error writing patients file: " + e.getMessage());
+        }
     }
 
     /**

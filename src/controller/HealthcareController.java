@@ -24,6 +24,7 @@ public class HealthcareController {
     private int nextAppointmentId = 1000;
     private int nextPrescriptionId = 2000;
     private int nextReferralId = 3000;
+    private int nextPatientId = 1000;
 
     public HealthcareController() {
         this.patients = new ArrayList<>();
@@ -39,6 +40,20 @@ public class HealthcareController {
     public void loadPatients(String filename) {
         patients = CSVHandler.readPatients(filename);
         System.out.println("Loaded " + patients.size() + " patients");
+        updateNextPatientId();
+    }
+
+    private void updateNextPatientId() {
+        for (Patient patient : patients) {
+            try {
+                int id = Integer.parseInt(patient.getPatientId().replaceAll("[^0-9]", ""));
+                if (id >= nextPatientId) {
+                    nextPatientId = id + 1;
+                }
+            } catch (NumberFormatException e) {
+                // Skip non-numeric IDs
+            }
+        }
     }
 
     public void loadClinicians(String filename) {
@@ -109,6 +124,41 @@ public class HealthcareController {
                 // Skip non-numeric IDs
             }
         }
+    }
+
+    // ==================== Patient Management ====================
+    
+    public Patient addPatient(String firstName, String lastName,
+                             String email, String phone, String dobString,
+                             String address, String nhsNumber, String gpId) {
+        // Auto-generate patient ID
+        String patientId = "P" + nextPatientId++;
+        
+        try {
+            LocalDate dateOfBirth = LocalDate.parse(dobString);
+            Patient patient = new Patient(patientId, firstName, lastName, email, phone,
+                                         dateOfBirth, address, nhsNumber, gpId);
+            patients.add(patient);
+            savePatients();
+            return patient;
+        } catch (Exception e) {
+            System.err.println("Error creating patient: " + e.getMessage());
+            return null;
+        }
+    }
+
+    private void savePatients() {
+        CSVHandler.writePatients("data/patients.csv", patients);
+    }
+
+    public boolean deletePatient(String patientId) {
+        Patient patient = getPatientById(patientId);
+        if (patient != null) {
+            patients.remove(patient);
+            savePatients();
+            return true;
+        }
+        return false;
     }
 
     // ==================== Appointment Management ====================
